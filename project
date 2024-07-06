@@ -1,0 +1,25 @@
+def check_number():
+    correct_number = 42
+    max_attempts = 5
+    attempts = 0
+
+    while attempts < max_attempts:
+        try:
+            user_number = int(input("Select a number between 1 and 100: "))
+            if 1 <= user_number <= 100:
+                attempts += 1
+                if user_number == correct_number:
+                    print("Congratulations! You've selected the correct number.")
+                    break
+                else:
+                    print("Sorry, that's not the correct number. Try again.")
+                    if attempts == max_attempts:
+                        print(f"You've used all your attempts. The correct number was {correct_number}.")
+            else:
+                print("Please select a number within the range of 1 to 100.")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+
+if __name__ == "__main__":
+    check_number()
